@@ -47,4 +47,3 @@ RUN apt-get update && apt-get install -yq  \
 	# libupnp 1.8.x
 	libupnp-dev \
 	libupnp13
-
