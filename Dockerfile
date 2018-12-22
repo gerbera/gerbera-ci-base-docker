@@ -32,6 +32,7 @@ RUN apt-get update && apt-get install -yq  \
 	duktape-dev \
 	# taglib
 	libtag1-dev \
+	dpkg-dev \
 	# For the scripts
 	curl \
 	wget \
@@ -42,9 +43,8 @@ RUN apt-get update && apt-get install -yq  \
 	g++-7 \
 	clang-7 \
 	libc++-7-dev \
-	libc++abi1 \
+	libc++abi-dev \
 	# libupnp 1.8.x
 	libupnp-dev \
 	libupnp13
 
-RUN curl https://raw.githubusercontent.com/gerbera/gerbera/master/scripts/install-googletest.sh | bash -
