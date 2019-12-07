@@ -33,6 +33,9 @@ RUN apt-get update && apt-get install -yq  \
 	# taglib
 	libtag1-dev \
 	dpkg-dev \
+	# matroska
+	libmatroska-dev \
+	libebml-dev \
 	# For the scripts
 	curl \
 	wget \
