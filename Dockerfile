@@ -10,10 +10,18 @@ RUN apt-get update && apt-get install -yq  \
 	# libs
 	uuid-dev \
 	libexpat1-dev \
+	# upnp (184)
+	libupnp-dev \
+	# sqlite
 	libsqlite3-dev \
-	default-libmysqlclient-dev \
+	# magic
 	libmagic-dev \
+	# duktape
+	libduktape203 \
+	duktape-dev \
+	# exif
 	libexif-dev \
+	# curl
 	libcurl4-openssl-dev \
 	# ffmpeg
 	libavutil-dev \
@@ -25,17 +33,20 @@ RUN apt-get update && apt-get install -yq  \
 	libswscale-dev \
 	libswresample-dev \
 	libpostproc-dev \
+	# ffmpegthumbnailer
+	libffmpegthumbnailer-dev \
 	# cmake
 	cmake \
-	# duktape \
-	libduktape203 \
-	duktape-dev \
 	# taglib
 	libtag1-dev \
 	dpkg-dev \
 	# matroska
 	libmatroska-dev \
 	libebml-dev \
+	# mysql
+	default-libmysqlclient-dev \
+	# exiv2
+	libexiv2-dev \
 	# For the scripts
 	curl \
 	wget \
@@ -46,7 +57,6 @@ RUN apt-get update && apt-get install -yq  \
 	g++-7 \
 	clang-7 \
 	libc++-7-dev \
-	libc++abi-dev \
-	# libupnp 1.8.x
-	libupnp-dev \
-	libupnp13
+	libc++abi-dev 
+
+
