@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -yq  \
 	# libs
 	uuid-dev \
 	libexpat1-dev \
+	libspdlog-dev \
 	# upnp (184)
 	libupnp-dev \
 	# sqlite
