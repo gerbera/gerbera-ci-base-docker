@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:sid-slim
 
 RUN apt-get update && apt-get install -yq  \
 	# Stops APT complaining
@@ -18,7 +18,6 @@ RUN apt-get update && apt-get install -yq  \
 	# magic
 	libmagic-dev \
 	# duktape
-	libduktape203 \
 	duktape-dev \
 	# exif
 	libexif-dev \
@@ -55,9 +54,9 @@ RUN apt-get update && apt-get install -yq  \
 	unzip \
 	# compilers
 	g++-8 \
-	g++-7 \
-	clang-7 \
-	libc++-7-dev \
-	libc++abi-dev 
+	g++-9 \
+	clang-8 \
+	libc++-8-dev \
+	libc++abi-dev
 
 
