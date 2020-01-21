@@ -9,8 +9,8 @@ RUN apt-get update && apt-get install -yq  \
 	pkg-config \
 	# libs
 	uuid-dev \
-	libexpat1-dev \
 	libspdlog-dev \
+	libpugixml-dev \
 	# upnp (184)
 	libupnp-dev \
 	# sqlite
