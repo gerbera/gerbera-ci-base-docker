@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -yq  \
 	uuid-dev \
 	libspdlog-dev \
 	libpugixml-dev \
+	libfmt-dev \
 	# upnp (184)
 	libupnp-dev \
 	# sqlite
