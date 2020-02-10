@@ -60,4 +60,4 @@ RUN apt-get update && apt-get install -yq  \
 	libc++-8-dev \
 	libc++abi-dev
 
-
+RUN curl https://raw.githubusercontent.com/gerbera/gerbera/master/scripts/install-pupnp.sh | bash
