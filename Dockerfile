@@ -7,5 +7,6 @@ RUN apk add --no-cache gcc g++ pkgconf make automake autoconf libtool \
 
 RUN mkdir build && cd build && \
 	curl https://raw.githubusercontent.com/gerbera/gerbera/master/scripts/install-pupnp.sh | bash && \
+	curl https://raw.githubusercontent.com/gerbera/gerbera/master/scripts/install-duktape.sh | bash && \
 	curl https://raw.githubusercontent.com/gerbera/gerbera/master/scripts/install-spdlog.sh | bash && \
 	cd .. && rm -rf build
