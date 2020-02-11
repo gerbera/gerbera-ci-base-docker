@@ -1,63 +1,11 @@
-FROM debian:sid-slim
+FROM alpine:3.11
 
-RUN apt-get update && apt-get install -yq  \
-	# Stops APT complaining
-	libterm-readline-gnu-perl \
-	# Build stuff
-	autoconf \
-	libtool \
-	pkg-config \
-	# libs
-	uuid-dev \
-	libspdlog-dev \
-	libpugixml-dev \
-	libfmt-dev \
-	# upnp (184)
-	libupnp-dev \
-	# sqlite
-	libsqlite3-dev \
-	# magic
-	libmagic-dev \
-	# duktape
-	duktape-dev \
-	# exif
-	libexif-dev \
-	# curl
-	libcurl4-openssl-dev \
-	# ffmpeg
-	libavutil-dev \
-	libavcodec-dev \
-	libavformat-dev \
-	libavdevice-dev \
-	libavfilter-dev \
-	libavresample-dev \
-	libswscale-dev \
-	libswresample-dev \
-	libpostproc-dev \
-	# ffmpegthumbnailer
-	libffmpegthumbnailer-dev \
-	# cmake
-	cmake \
-	# taglib
-	libtag1-dev \
-	dpkg-dev \
-	# matroska
-	libmatroska-dev \
-	libebml-dev \
-	# mysql
-	default-libmysqlclient-dev \
-	# exiv2
-	libexiv2-dev \
-	# For the scripts
-	curl \
-	wget \
-	git \
-	unzip \
-	# compilers
-	g++-8 \
-	g++-9 \
-	clang-8 \
-	libc++-8-dev \
-	libc++abi-dev
+RUN apk add --no-cache gcc g++ pkgconf make automake autoconf libtool \
+	util-linux-dev sqlite-dev mariadb-connector-c-dev cmake zlib-dev fmt-dev \
+	file-dev libexif-dev curl-dev ffmpeg-dev ffmpegthumbnailer-dev wget xz \
+	libmatroska-dev libebml-dev clang taglib-dev pugixml-dev curl 
 
-RUN curl https://raw.githubusercontent.com/gerbera/gerbera/master/scripts/install-pupnp.sh | bash
+RUN mkdir build && cd build && \
+	curl https://raw.githubusercontent.com/gerbera/gerbera/master/scripts/install-pupnp.sh | bash && \
+	curl https://raw.githubusercontent.com/gerbera/gerbera/master/scripts/install-spdlog.sh | bash && \
+	cd .. && rm -rf build
